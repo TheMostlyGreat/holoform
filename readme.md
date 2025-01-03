@@ -1,14 +1,23 @@
-# Holoform - Intelligent Email Management
+# Holoform - Sample Email Management App
 
-A Python-based email management system that uses AI to classify, prioritize, and streamline Gmail communications.
+A demonstration application showing how to use [Arcade](https://arcade-ai.com) for Gmail integration and intelligent email processing. Built with Python, this sample app shows how to:
+
+- Authenticate users with Gmail using Arcade's Agent Auth
+- Call Gmail API endpoints through Arcade's Tool system  
+- Use LLMs for email classification and summarization
+- Manage Gmail labels programmatically
+
+To sign up for Arcade, please visit [Arcade's website](https://arcade-ai.com).
+## Important Note
+This is a sample application intended to demonstrate Arcade's capabilities. For production use, please refer to [Arcade's documentation](https://docs.arcade-ai.com).
 
 ## Features
 
-- **Smart Email Classification**: Automatically categorizes emails into actionable categories
-- **Priority Management**: Assigns priority levels to help focus on what matters
-- **Gmail Integration**: Seamless integration with Gmail's label system
-- **AI-Powered Processing**: Uses LLMs for intelligent email analysis
-- **Automated Response Drafting**: Generates contextual email response drafts
+- **Gmail Integration**: Uses Arcade's Google toolkit for seamless Gmail access
+- **Smart Classification**: Demonstrates LLM-based email categorization
+- **Label Management**: Shows automated Gmail label handling
+- **Priority Assignment**: Example of intelligent email prioritization
+- **Response Generation**: Sample email response drafting
 
 ## Project Structure
 
