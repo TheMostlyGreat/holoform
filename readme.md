@@ -207,4 +207,8 @@ This is an active project. Current development focuses on:
 2. Create a feature branch
 3. Submit a pull request
 
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 
