@@ -1,0 +1,106 @@
+# Email Priority Agent Configuration
+
+# VIP Email Addresses
+vip_emails:
+  - ceo@company.com
+  - cto@company.com
+  - important.client@client.com
+  - family.member@email.com
+
+# Sender-specific rules
+sender_rules:
+  "boss@company.com":
+    importance_boost: 0.3
+    always_notify: true
+    
+  "newsletter@*":
+    importance_penalty: 0.5
+    auto_archive: true
+    
+  "*@important-client.com":
+    importance_boost: 0.2
+    tag: "client"
+
+# Keyword-based rules
+keyword_rules:
+  urgent_keywords:
+    - "urgent"
+    - "asap"
+    - "emergency"
+    - "critical"
+    - "deadline today"
+    boost: 0.4
+    
+  meeting_keywords:
+    - "meeting"
+    - "schedule"
+    - "calendar"
+    - "appointment"
+    boost: 0.2
+    
+  financial_keywords:
+    - "invoice"
+    - "payment"
+    - "contract"
+    - "budget"
+    boost: 0.3
+    tag: "financial"
+
+# Domain rules
+domain_rules:
+  "company.com":
+    importance_base: 0.6
+    
+  "gmail.com":
+    importance_base: 0.3
+    
+  "client-domain.com":
+    importance_base: 0.8
+    tag: "client"
+
+# Time-based rules
+time_rules:
+  business_hours:
+    start: "09:00"
+    end: "17:00"
+    timezone: "America/New_York"
+    boost: 0.1
+    
+  after_hours_critical:
+    keywords: ["server down", "production issue", "security breach"]
+    boost: 0.5
+
+# Thread rules
+thread_rules:
+  active_thread_boost: 0.15
+  stale_thread_days: 7
+  stale_thread_penalty: 0.2
+
+# Learning parameters
+learning_config:
+  feedback_weight: 0.3
+  history_lookback_days: 30
+  min_interactions_for_profile: 5
+
+# Notification settings
+notifications:
+  critical_priority:
+    push: true
+    email: true
+    sms: false
+    
+  high_priority:
+    push: true
+    email: false
+    sms: false
+    
+  medium_priority:
+    push: false
+    email: false
+    sms: false
+
+# Archive rules
+auto_archive:
+  days_old: 30
+  min_priority: 0.3
+  exclude_tags: ["important", "follow-up"]
