@@ -461,17 +461,14 @@ Every email sent includes subtle: "⚡ Sent with Holoform - Never have writer's 
 - Enterprise security/compliance ($$$)
 - White-label for consultants/agencies
 
-#### 2. **Usage-Based Genius**
-- First 50 messages/month free (hook them)
-- $30/month for power users
-- $0.10 per message over 500 (enterprises pay)
-- SMS/Slack channels as paid add-ons
+#### 2. **Simple Pricing** [REVISED - TOO COMPLEX]
+- $30/month unlimited (personal)
+- $25/user/month (teams, min 5)
+- Custom pricing (enterprise)
 
-#### 3. **The Notion Playbook: Creator Economy**
-- Response template marketplace
-- Workflow automations store
-- Consultant certification program
-- Revenue share with creators
+#### 3. **The Notion Playbook: Creator Economy** [DEFER TO YEAR 2]
+- Focus on core product first
+- Creator economy adds complexity
 
 #### 4. **Immediate Revenue Streams**
 - **Week 1**: Lifetime deals on AppSumo ($20K-50K)
@@ -482,10 +479,9 @@ Every email sent includes subtle: "⚡ Sent with Holoform - Never have writer's 
 
 ### Psychological Triggers for Explosive Growth
 
-#### 1. **Loss Aversion on Steroids**
-- "You have $2,847 worth of opportunities in your inbox"
-- "3 VIP messages aging (usually respond in 2 hours)"
-- "Your response time is hurting relationships"
+#### 1. **Loss Aversion** [SIMPLIFIED]
+- "3 important messages waiting"
+- Simple, not manipulative
 
 #### 2. **Social Proof Everywhere**
 - "843 executives in SF using Holoform today"
@@ -894,11 +890,10 @@ This research-based approach ensures we're not just solving the overload problem
 - **GDPR/CCPA Plus**: Exceed compliance requirements
 - **SOC 2 Type II**: Enterprise-grade security from day one
 
-### 3. **Accessibility & Inclusivity**
-- **WCAG 2.1 AA Compliance**: Full accessibility
-- **Neurodiversity Support**: ADHD-friendly modes, dyslexia fonts
-- **Multiple Input Methods**: Voice, text, gesture
-- **Cultural Sensitivity**: Tone adaptation for global users
+### 3. **Accessibility & Inclusivity** [SIMPLIFIED]
+- **Basic Accessibility**: Keyboard navigation, screen reader support
+- **Clear UI**: High contrast, readable fonts
+- **Future**: Full WCAG compliance in v2
 
 ### 4. **Technical Robustness**
 - **Offline Mode**: Queue actions when disconnected
