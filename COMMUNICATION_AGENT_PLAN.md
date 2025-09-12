@@ -147,10 +147,8 @@ backend/
 │   ├── context/           # Context retrieval agent
 │   └── response/          # Response generation agent
 ├── channels/              # Channel integrations
-│   ├── gmail/            # Existing Gmail integration
-│   ├── slack/            # Slack API integration
-│   ├── sms/              # Twilio integration
-│   └── linkedin/         # LinkedIn messaging
+│   ├── gmail/            # Existing Gmail integration (MVP)
+│   └── slack/            # Slack API integration (MVP+1)
 ├── memory/               # Cognitive memory system
 │   ├── vector_store/     # Qdrant integration
 │   └── knowledge_graph/  # Relationship mapping
@@ -571,11 +569,9 @@ Every email sent includes subtle: "⚡ Sent with Holoform - Never have writer's 
 - **Micro-Lessons**: Daily 2-min productivity tips while processing
 - **XP System**: Gain experience for each message processed
 
-### 2. **The BeReal Authenticity Play**
-- **Daily Productivity Moment**: Random notification to process messages
-- **Authentic Sharing**: "My real inbox right now" screenshots
-- **No Filters**: Show the messy reality of communication
-- **Time Pressure**: 2-minute window to capture state
+### 2. **The BeReal Authenticity Play** [DEFER TO V2]
+- Could add random productivity moments later
+- Risk of adding anxiety rather than reducing it
 
 ### 3. **The Spotify Discovery Engine**
 - **Communication Insights**: "You respond fastest to [X type] messages"
@@ -856,11 +852,14 @@ This research-based approach ensures we're not just solving the overload problem
 
 ## Development Milestones
 
-### MVP (3 months)
+### MVP (6-8 weeks) - FOCUS ON MAGIC MOMENT
 - Gmail integration only
-- Basic queue and ranking
-- Simple card-based UI
-- Core AI assistance
+- Top 5 message queue
+- 3 AI response starters for every message
+- One-click send
+- Time saved counter
+- Simple 3-pane UI
+- "Good enough" mode
 
 ### Beta (6 months)
 - 3 channels (Gmail, Slack, SMS)
