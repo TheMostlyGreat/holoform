@@ -1,0 +1,1 @@
+2026-05-30T22:45:54.144Z 5302f5e5-ff6e-48fa-ad35-5c31a5d0df7c ticket=∅/freeform Next: tell me the scope and target (e.g. "port the root app to TypeScript on Bun, drop Python") and I'll plan the port — or if you just wanted the tooling ready, you're all set.
