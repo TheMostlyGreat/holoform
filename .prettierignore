@@ -1,0 +1,4 @@
+
+# Safeword - managed prettier exclusions
+.safeword/
+.cursor/
