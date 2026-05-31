@@ -1,14 +1,21 @@
 # Holoform - Sample Email Management App
 
+> **Legacy prototype.** Holoform is being reimagined into a neutral-fiduciary,
+> multi-channel communication network. This email app is the first channel adapter,
+> not the product. See [`docs/product-brief.md`](./docs/product-brief.md) for the
+> current vision.
+
 A demonstration application showing how to use [Arcade](https://arcade-ai.com) for Gmail integration and intelligent email processing. Built with Python, this sample app shows how to:
 
 - Authenticate users with Gmail using Arcade's Agent Auth
-- Call Gmail API endpoints through Arcade's Tool system  
+- Call Gmail API endpoints through Arcade's Tool system
 - Use LLMs for email classification and summarization
 - Manage Gmail labels programmatically
 
 To sign up for Arcade, please visit [Arcade's website](https://arcade-ai.com).
+
 ## Important Note
+
 This is a sample application intended to demonstrate Arcade's capabilities. For production use, please refer to [Arcade's documentation](https://docs.arcade-ai.com).
 
 ## Features
@@ -34,17 +41,20 @@ holoform/
 
 1. Clone the repository
 2. Create a virtual environment:
+
 ```bash
 python -m venv hf-env
 source hf-env/bin/activate  # Unix
 ```
 
 3. Install dependencies:
+
 ```bash
 pip install -r requirements.txt
 ```
 
 4. Create a `.env` file with:
+
 ```
 ARC_BASE_URL=http://localhost:9099
 USER_ID=your-email@example.com
@@ -54,6 +64,7 @@ ARCADE_API_KEY=your-api-key
 ## Core Components
 
 ### Email Classification
+
 See implementation in:
 
 ```82:116:processors/message_processor.py
@@ -93,8 +104,8 @@ def classify_message(message: Message) -> None:
     logger.debug(f"Explanation: {classification['explanation']}\n")
 ```
 
-
 ### Label Management
+
 See implementation in:
 
 ```1:19:entities/labels.py
@@ -119,8 +130,8 @@ class GmailSystemLabel(Enum):
     CATEGORY_FORUMS = "CATEGORY_FORUMS"
 ```
 
-
 ### Message Processing
+
 See implementation in:
 
 ```25:65:processors/message_processor.py
@@ -167,7 +178,6 @@ def create_message_objects(gmail_messages: list, user_id: str) -> list[Message]:
 
 ```
 
-
 ## Usage
 
 Run the main script to process emails:
@@ -177,6 +187,7 @@ python main.py
 ```
 
 The system will:
+
 1. Authenticate with Gmail
 2. Fetch recent emails
 3. Classify and prioritize messages
@@ -186,6 +197,7 @@ The system will:
 ## Dependencies
 
 Key dependencies from requirements.txt:
+
 - arcade_google
 - fastapi
 - openai
@@ -196,6 +208,7 @@ Key dependencies from requirements.txt:
 ## Project Status
 
 This is an active project. Current development focuses on:
+
 - Batch processing optimization
 - Multi-part email support
 - Forward email with attachments support
@@ -210,5 +223,3 @@ This is an active project. Current development focuses on:
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-
