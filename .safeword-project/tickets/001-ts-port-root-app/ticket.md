@@ -30,7 +30,8 @@ done_when:
 
 ## Work Log
 
-- 2026-05-30T22:52:00Z Started: Read all 10 root-app Python modules; classified as feature; Arcade set aside as a typed stub per user direction.
+- 2026-05-31T00:30:00Z Complete: All 8 modules ported to src/ on Bun. tsc --noEmit clean, eslint (safeword strict) clean, 22 tests pass, `bun run src/main.ts` runs end-to-end against the Arcade stub (exit 0). Extracted pure `computeLabelChanges` and `Thread.buildTree` for testability. (refs: src/, commit pending)
+- 2026-05-30T22:52:00Z Started: Read all 10 root-app Python modules; reclassified feature→task (faithful translation of pre-defined behavior); Arcade set aside as a typed stub per user direction.
 
 ---
 

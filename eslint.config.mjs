@@ -1,5 +1,5 @@
-import { defineConfig } from "eslint/config";
-import safeword from "safeword/eslint";
+import { defineConfig } from 'eslint/config';
+import safeword from 'safeword/eslint';
 
 // Prettier config is bundled with safeword
 const eslintConfigPrettier = safeword.prettierConfig;
@@ -28,12 +28,16 @@ const baseConfigs = {
 
 // Build scoped Next.js rules for monorepos
 // Each Next.js app gets its own scoped config with files: pattern
-const scopedNextConfigs = nextPaths?.flatMap((filePath) =>
-  configs.nextOnlyRules.map((config) => ({ ...config, files: [filePath] }))
-) ?? [];
+const scopedNextConfigs =
+  nextPaths?.flatMap(filePath =>
+    configs.nextOnlyRules.map(config => ({ ...config, files: [filePath] })),
+  ) ?? [];
 
 export default defineConfig([
   { ignores: detect.getIgnores() },
+  // Bun's virtual modules (bun:test, etc.) aren't resolvable on disk.
+  { settings: { 'import-x/core-modules': ['bun', 'bun:test', 'bun:sqlite'] } },
+  // eslint-disable-next-line security/detect-object-injection -- framework is a trusted detector value
   ...baseConfigs[framework],
   ...scopedNextConfigs,
   // Testing configs - only if detected (plugins have framework peer deps)

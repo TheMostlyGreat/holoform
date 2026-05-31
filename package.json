@@ -4,6 +4,9 @@
   "type": "module",
   "private": true,
   "scripts": {
+    "start": "bun run src/main.ts",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "format": "prettier --write .",
     "lint:eslint": "eslint .",

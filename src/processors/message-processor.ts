@@ -99,6 +99,28 @@ export async function classifyMessage(message: Message): Promise<void> {
   logger.debug(`Explanation: ${classification.explanation}\n`);
 }
 
+/** The labels to add and remove for a given classification. */
+export interface LabelChanges {
+  labelsToAdd: string[];
+  labelsToRemove: string[];
+}
+
+/**
+ * Pure label decision: always tag with Holoform + classification + priority,
+ * and remove from the inbox unless the message is action-required or high-priority.
+ */
+export function computeLabelChanges(classification: Classification): LabelChanges {
+  const labelsToAdd = [
+    getFullLabel(HoloformLabel.Holoform),
+    classification.classification,
+    classification.priority,
+  ];
+  const keepInInbox =
+    classification.classification.toLowerCase() === getFullLabel(HoloformLabel.ActionRequired) ||
+    classification.priority === getFullLabel(HoloformLabel.HighPriority);
+  return { labelsToAdd, labelsToRemove: keepInInbox ? [] : [GmailSystemLabel.Inbox] };
+}
+
 /** Applies Holoform labels (and conditionally archives) based on classification. */
 export function updateLabels(message: Message): void {
   const { classification, gmailMessageId, userId } = message;
@@ -107,20 +129,7 @@ export function updateLabels(message: Message): void {
   }
 
   logger.debug(`Updating labels for message: ${gmailMessageId}`);
-  const labelsToAdd = [
-    getFullLabel(HoloformLabel.Holoform),
-    classification.classification,
-    classification.priority,
-  ];
-  let labelsToRemove: string[] = [];
-  if (
-    !(
-      classification.classification.toLowerCase() === getFullLabel(HoloformLabel.ActionRequired) ||
-      classification.priority === getFullLabel(HoloformLabel.HighPriority)
-    )
-  ) {
-    labelsToRemove = [GmailSystemLabel.Inbox];
-  }
+  const { labelsToAdd, labelsToRemove } = computeLabelChanges(classification);
   logger.debug(`\nLabels to add: ${labelsToAdd.join(', ')}\n`);
   logger.debug(`\nLabels to remove: ${labelsToRemove.join(', ')}\n`);
   changeEmailLabels({ emailId: gmailMessageId, labelsToAdd, labelsToRemove, userId });
