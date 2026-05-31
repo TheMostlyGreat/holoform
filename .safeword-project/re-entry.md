@@ -1,1 +1,2 @@
 2026-05-30T22:45:54.144Z 5302f5e5-ff6e-48fa-ad35-5c31a5d0df7c ticket=∅/freeform Next: tell me the scope and target (e.g. "port the root app to TypeScript on Bun, drop Python") and I'll plan the port — or if you just wanted the tooling ready, you're all set.
+2026-05-31T00:31:07.011Z 886ecdb9-6645-4881-a1f6-6ca9a52ee6e2 ticket=001/implement Next: want me to run `/verify` to close the ticket, start on the Arcade wiring, or leave it here?
